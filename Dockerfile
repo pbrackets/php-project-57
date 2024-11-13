@@ -10,8 +10,6 @@ FROM richarvey/nginx-php-fpm:3.1.6
 #    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
 #    && php -r "unlink('composer-setup.php');"
 
-#RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
-#RUN apt-get install -y nodejs
 RUN apk add --update nodejs npm
 
 WORKDIR /app
