@@ -9,6 +9,8 @@
 ### Test Coverage Badge
 [![Test Coverage](https://api.codeclimate.com/v1/badges/656500b54a8fc0fc8e23/test_coverage)](https://codeclimate.com/github/pbrackets/php-project-57/test_coverage)
 
+Деплой приложения https://php-project-57-yw1q.onrender.com
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
