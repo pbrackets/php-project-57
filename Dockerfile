@@ -12,7 +12,7 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 #RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 #RUN apt-get install -y nodejs
-RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs npm
 
 WORKDIR /app
 
