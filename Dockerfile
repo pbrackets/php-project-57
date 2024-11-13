@@ -12,7 +12,7 @@ FROM richarvey/nginx-php-fpm:3.1.6
 
 RUN apk add --update nodejs npm
 
-WORKDIR /app
+#WORKDIR /app
 
 COPY . .
 RUN composer install
