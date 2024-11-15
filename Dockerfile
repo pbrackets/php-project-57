@@ -33,7 +33,7 @@ ENV APP_ENV production
 ENV APP_DEBUG false
 ENV LOG_CHANNEL stderr
 ENV APP_KEY base64:bFkYZCjWPoOYivAhyqigsgVIZ3Rr7xj4o8k1iJdFgn0=
-ENV APP_URL https://php-project-57-yw1q.onrender.com/
+ENV APP_URL https://php-project-57-yw1q.onrender.com
 
 # Allow composer to run as root
 ENV COMPOSER_ALLOW_SUPERUSER 1
