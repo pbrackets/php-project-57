@@ -1,6 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/pbrackets/php-project-57/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/pbrackets/php-project-57/actions)
-### Github Actions (запуск тестов и линтер)
+### Github Actions  (запуск тестов и линтер)
 [![hexlet-check](https://github.com/pbrackets/php-project-57/actions/workflows/hexlet-check.yml/badge.svg?branch=master)](https://github.com/pbrackets/php-project-57/actions/workflows/hexlet-check.yml)
 
 ### Maintainability Badge
