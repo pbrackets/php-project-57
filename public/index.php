@@ -16,25 +16,25 @@ require __DIR__.'/../vendor/autoload.php';
 (require_once __DIR__.'/../bootstrap/app.php')
     ->handleRequest(Request::capture());
 
-//подключение БД
-$envDbUrl = getenv('DATABASE_URL');
-if ($envDbUrl === false) {
-    die('Отсутствует переменная окружения DATABASE_URL');
-}
-$databaseUrl = parse_url($envDbUrl);
-
-//$databaseUrl = parse_url($_ENV['DATABASE_URL']);
-$username = $databaseUrl['user'];             // janedoe
-$password = $databaseUrl['pass'];             // mypassword
-$host     = $databaseUrl['host'];             // localhost
-$port     = $databaseUrl['port'];             // 5432
-$dbName   = ltrim($databaseUrl['path'], '/'); // mydb
-$db_table = 'users';                           // Имя Таблицы БД
-
-//формируем dsn для подключения
-$dsn = "pgsql:host=".$host.";port=".$port.";dbname=".$dbName;
-//PDO подключение к базе данных
-$db = new PDO($dsn, $username, $password);
+// //подключение БД
+// $envDbUrl = getenv('DATABASE_URL');
+// if ($envDbUrl === false) {
+//     die('Отсутствует переменная окружения DATABASE_URL');
+// }
+// $databaseUrl = parse_url($envDbUrl);
+//
+// //$databaseUrl = parse_url($_ENV['DATABASE_URL']);
+// $username = $databaseUrl['user'];             // janedoe
+// $password = $databaseUrl['pass'];             // mypassword
+// $host     = $databaseUrl['host'];             // localhost
+// $port     = $databaseUrl['port'];             // 5432
+// $dbName   = ltrim($databaseUrl['path'], '/'); // mydb
+// $db_table = 'users';                           // Имя Таблицы БД
+//
+// //формируем dsn для подключения
+// $dsn = "pgsql:host=".$host.";port=".$port.";dbname=".$dbName;
+// //PDO подключение к базе данных
+// $db = new PDO($dsn, $username, $password);
 
 // public function store()
 // {
