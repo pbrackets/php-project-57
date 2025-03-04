@@ -6,14 +6,28 @@
         <h1 class="max-w-2xl mb-4 text-4xl leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
             {{ __('layout.task_header') }}
         </h1>
-        <div class="w-full flex items-center">--}}
+        <div class="w-full flex items-center">
         {{  html()->form('GET', route('tasks.index'))->open() }}
-                <div class="flex">
-        {{  html()->input('text', 'name') }}
-        {{  html()->submit('Применить')->addClass(['bg-blue-500', 'hover:bg-blue-700', 'text-white', 'font-bold', 'py-2', 'px-4', 'rounded', 'ml-2']) }}
+            <div class="flex">
+
+        {{  html()->select('filter[status_id]', $taskStatuses, $filter['status_id'] ?? null)->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_task_status')) }}
+        {{  html()->select('status_id', array('L' => 'новая', 'S' => 'завершена', 'V' => 'выполняется', 'A' => 'в архиве'))->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_creater')) }}
+        {{  html()->select('status_id', array('L' => 'новая', 'S' => 'завершена', 'V' => 'выполняется', 'A' => 'в архиве'))->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_assigned')) }}
+        {{  html()->submit(__('layout.create_apply'))->addClass(['bg-white', 'hover:bg-gray-700', 'text-black', 'font-bold', 'py-2', 'px-4', 'rounded', 'ml-2']) }}
         {{ html()->form()->close() }}
+                @auth()
+                    @csrf
+                    <a href="{{ route('tasks.create') }}"
+                       class="bg-white hover:bg-gray-700 text-black font-bold py-2 px-4 rounded">
+                        {{ __('layout.create_button_task') }}
+                    </a>
+                @endauth
             </div>
         </div>
+
+
+
+
 {{--        <div class="w-full flex items-center">--}}
 
 {{--            <div>--}}
@@ -48,7 +62,7 @@
 {{--            </div>--}}
         </div>
         <table class="mt-4">
-            <thead class="border-b-2 border-solid border-black text-left" style="text-align: left">
+            <thead class="border-b-2 border-solid border-black text-left text-white" style="text-align: left">
             <tr>
                 <th>{{ __('layout.table_id') }}</th>
                 <th>{{ __('layout.table_task_status') }}</th>

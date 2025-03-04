@@ -10,7 +10,7 @@
             Просмотр задачи:
         </h1>
         <h2 class=" mb-4 text-4xl">
-            {{ $task->name }}
+            {{ $tasks->name }}
             <a href="{{ route('tasks.edit', $task) }}">⚙</a>
         </h2>
         <p><span class="font-black">Имя: </span> {{ $task->name }}</p>

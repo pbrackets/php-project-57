@@ -31,10 +31,10 @@
 
                 @guest()
                     <div class="flex items-center lg:order-2">
-                        <a href="{{ route("login") }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <a href="{{ route("login") }}" class="bg-white hover:bg-gray-700 text-black font-bold py-2 px-4 rounded">
                             {{ __('layout.login') }}
                         </a>
-                        <a href="{{ route("register") }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">
+                        <a href="{{ route("register") }}" class="bg-white hover:bg-gray-700 text-black font-bold py-2 px-4 rounded ml-2">
                             {{ __('layout.registration') }}
                         </a>
                     </div>
@@ -44,7 +44,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-                        <a href="{{ route("logout") }}" class="bg-blue-500 hover: bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a href="{{ route("logout") }}" class="bg-white hover:bg-gray-700 text-black font-bold py-2 px-4 rounded" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             {{ __('layout.logout') }}
                         </a>
                     </div>
