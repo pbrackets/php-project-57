@@ -11,8 +11,8 @@
             <div class="flex">
 
         {{  html()->select('filter[status_id]', $taskStatuses, $filter['status_id'] ?? null)->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_task_status')) }}
-        {{  html()->select('status_id', array('L' => 'новая', 'S' => 'завершена', 'V' => 'выполняется', 'A' => 'в архиве'))->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_creater')) }}
-        {{  html()->select('status_id', array('L' => 'новая', 'S' => 'завершена', 'V' => 'выполняется', 'A' => 'в архиве'))->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_assigned')) }}
+        {{  html()->select('filter[created_by_id]', $users, $filter['created_by_id'] ?? null)->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_creater')) }}
+        {{  html()->select('filter[assigned_to_id]', $users, $filter['assigned_to_id'] ?? null)->addClass(['form-select', 'ml-2', 'rounded', 'border-gray-300'])->placeholder(__('layout.table_assigned')) }}
         {{  html()->submit(__('layout.create_apply'))->addClass(['bg-white', 'hover:bg-gray-700', 'text-black', 'font-bold', 'py-2', 'px-4', 'rounded', 'ml-2']) }}
         {{ html()->form()->close() }}
                 @auth()

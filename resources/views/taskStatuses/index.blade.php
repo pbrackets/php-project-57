@@ -7,12 +7,12 @@
         @auth()
             <div>
                 @csrf
-                <a href="{{ route('task_statuses.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ route('task_statuses.create') }}" class="bg-white, hover:bg-gray-700, text-white font-bold py-2 px-4 rounded">
                     {{ __('layout.create_button_task_statuses') }}           </a>
             </div>
         @endauth
         <table class="mt-4">
-            <thead class="border-b-2 border-solid border-black text-left" style="text-align: left">
+            <thead class="border-b-2 border-solid border-black text-white text-left" style="text-align: left">
             <tr>
                 <th>{{ __('layout.table_id') }}</th>
                 <th>{{ __('layout.table_name') }}</th>
@@ -24,7 +24,7 @@
             </thead>
             <tbody>
             @foreach($taskStatuses as $taskStatus)
-                <tr class="border-b border-dashed text-left">
+                <tr class="border-b border-dashed text-white text-left">
                     <td>{{ $taskStatus->id }}</td>
                     <td>{{ $taskStatus->name }}</td>
                     <td>{{ $taskStatus->created_at }}</td>
@@ -39,7 +39,7 @@
                             >
                                 {{ __('layout.table_delete') }}
                             </a>
-                            <a class="text-blue-600 hover:text-blue-900"
+                            <a class="text-white hover:bg-gray-700"
                                href="{{ route("task_statuses.edit", $taskStatus) }}"
                             >
                                 {{ __('layout.table_edit') }}
