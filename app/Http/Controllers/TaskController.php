@@ -8,9 +8,8 @@ use App\Models\Label;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -65,8 +64,8 @@ class TaskController extends Controller
         $task->fill($data);
         $task->save();
 
-        if (array_key_exists('tasks', $validated)) {
-            $task->tasks()->attach($validated['tasks']);
+        if (array_key_exists('labels', $validated)) {
+            $task->labels()->attach($validated['labels']);
         }
 
         $message = __('controllers.tasks_create');

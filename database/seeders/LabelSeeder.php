@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Label;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Database\Seeder;

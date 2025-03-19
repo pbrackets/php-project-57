@@ -77,35 +77,32 @@
             </thead>
             <tbody>
             @foreach($tasks as $task)
-                <tr class="border-b border-dashed text-left">
+                <tr class="border-b border-dashed text-white text-left">
                     <td>{{ $task->id }}</td>
                     <td>{{ $taskStatuses[$task->status_id] }}</td>
                     <td><a href="{{ route('tasks.show', $task) }}">{{ $task->name }}</a></td>
                     <td>{{ $users[$task->created_by_id] }}</td>
                     <td>{{ $users[$task->assigned_to_id] }}</td>
                     <td>{{ date_format($task->created_at, 'd.m.Y') }}</td>
-                    @auth()
-                        <td>
-                            @can('delete', $task)
-                                <a
-                                    class="text-red-600 hover:text-red-900"
-                                    rel="nofollow"
-                                    data-method="delete"
-                                    data-confirm="{{ __('layout.table_delete_question') }}"
-                                    href="{{ route('tasks.destroy', $task) }}"
-                                >
-                                    {{ __('layout.table_delete') }}
-                                </a>
-                            @endcan
-                            @can('update', $task)
-                                <a class="text-blue-600 hover:text-blue-900"
-                                   href="{{ route("tasks.edit", $task) }}"
-                                >
-                                    {{ __('layout.table_edit') }}
-                                </a>
-                            @endcan
-                        </td>
-                    @endauth
+                    <td>
+                        <a
+                            class="text-red-600 hover:text-red-900"
+                            rel="nofollow"
+                            data-method="delete"
+                            data-confirm="{{ __('layout.table_delete_question') }}"
+                            href="{{ route('tasks.destroy', $task) }}"
+                        >
+                            {{ __('layout.table_delete') }}
+                        </a>
+
+                        <a class="text-white hover:text-gray-700"
+                           href="{{ route("tasks.edit", $task) }}"
+                        >
+                            {{ __('layout.table_edit') }}
+                        </a>
+
+                    </td>
+
                 </tr>
             @endforeach
             </tbody>
