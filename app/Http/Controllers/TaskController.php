@@ -37,10 +37,7 @@ class TaskController extends Controller
         return view('tasks.index', compact('tasks', 'taskStatuses', 'users', 'filter'));
     }
 
-    public function show(Task $task)
-    {
-        return view('tasks.show', compact('task'));
-    }
+
 
     public function create()
     {
@@ -68,13 +65,18 @@ class TaskController extends Controller
         $task->fill($data);
         $task->save();
 
-        if (array_key_exists('labels', $validated)) {
-            $task->labels()->attach($validated['labels']);
+        if (array_key_exists('tasks', $validated)) {
+            $task->tasks()->attach($validated['tasks']);
         }
 
         $message = __('controllers.tasks_create');
         flash($message)->success();
         return redirect()->route('tasks.index');
+    }
+
+    public function show(Task $task)
+    {
+        return view('tasks.show', compact('task'));
     }
 
     public function edit(Task $task)
@@ -110,6 +112,7 @@ class TaskController extends Controller
         flash($message)->success();
         return redirect()->route('tasks.index');
     }
+
 
     public function destroy(Task $task)
     {
