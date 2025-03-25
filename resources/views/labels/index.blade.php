@@ -34,15 +34,15 @@
                         <td>
                             <a
                                 class="text-red-600 hover:text-red-900"
-                                rel="nofollow"
+                                data-confirm="Are you sure?"
                                 data-method="delete"
-                                data-confirm="{{ __('layout.table_delete_question') }}"
-                                href="{{ route('labels.destroy', $label) }}"
+
+                                href="{{ route('labels.destroy', $label->id) }}"
                             >
                                 {{ __('layout.table_delete') }}
                             </a>
                             <a class="text-blue-600 hover:text-blue-900"
-                               href="{{ route("labels.edit", $label) }}"
+                               href="{{ route("labels.edit", $label->id) }}"
                             >
                                 {{ __('layout.table_edit') }}
                             </a>

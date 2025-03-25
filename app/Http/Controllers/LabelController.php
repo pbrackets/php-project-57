@@ -39,6 +39,7 @@ class LabelController extends Controller
         return redirect()->route('labels.index');
     }
 
+
     public function edit(Label $label)
     {
         return view('labels.edit', compact('label'));
@@ -61,13 +62,17 @@ class LabelController extends Controller
 
     public function destroy(Label $label)
     {
-        if ($label->tasks()->exists()) {
+
+        if (!$label->tasks()->exists()) {
             flash(__('controllers.label_statuses_destroy_failed'))->error();
             return back();
         }
+
         $label->delete();
 
         flash(__('controllers.label_destroy'))->success();
         return redirect()->route('labels.index');
     }
 }
+
+

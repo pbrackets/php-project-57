@@ -1,0 +1,14 @@
+1) В vite.config.js прописано, какие файлы собирать
+2) Вызвать билд фронта (css, js) командой npm run build. Она прописана в package.json (vite build).
+В частности, tailwind прописан в 
+3) Для этого нужен обновленный nodejs. Как обновлять:
+    https://stackoverflow.com/questions/8191459/how-do-i-update-node-js
+    nvm ls
+    nvm install stable
+4) После билда генерируются файлы: public/build/assets
+    Они описаны в public/build/manifest.json. 
+5) Эти файлы можно подключать в layout. Например:
+    resources/views/layouts/app.blade.php
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+   
