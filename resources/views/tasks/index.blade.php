@@ -60,7 +60,7 @@
 {{--                    </a>--}}
 {{--                @endauth--}}
 {{--            </div>--}}
-        </div>
+{{--        </div>--}}
         <table class="mt-4">
             <thead class="border-b-2 border-solid border-black text-left text-white" style="text-align: left">
             <tr>
@@ -85,15 +85,15 @@
                     <td>{{ $users[$task->assigned_to_id] }}</td>
                     <td>{{ date_format($task->created_at, 'd.m.Y') }}</td>
                     <td>
-                        <a
-                            class="text-red-600 hover:text-red-900"
-                            rel="nofollow"
-                            data-method="delete"
-                            data-confirm="{{ __('layout.table_delete_question') }}"
-                            href="{{ route('tasks.destroy', $task) }}"
-                        >
-                            {{ __('layout.table_delete') }}
-                        </a>
+{{--                        <a--}}
+{{--                            class="text-red-600 hover:text-red-900"--}}
+{{--                            rel="nofollow"--}}
+{{--                            data-method="delete"--}}
+{{--                            data-confirm="{{ __('layout.table_delete_question') }}"--}}
+{{--                            href="{{ route('tasks.destroy', $task) }}"--}}
+{{--                        >--}}
+{{--                            {{ __('layout.table_delete') }}--}}
+{{--                        </a>--}}
 
                         <a class="text-white hover:text-gray-700"
                            href="{{ route("tasks.edit", $task) }}"
