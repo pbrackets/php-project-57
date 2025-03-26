@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('label_task', function (Blueprint $table) {
-            $table->foreignId('task_id')->constrained('tasks');
-            $table->foreignId('label_id')->constrained('labels');
+            $table->bigInteger('label_id')->nullable(false);
             $table->foreign('label_id')->references('id')->on('labels');
+            $table->bigInteger('task_id')->nullable(false);
             $table->foreign('task_id')->references('id')->on('tasks');
 
             $table->timestamps();
