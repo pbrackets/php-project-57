@@ -86,15 +86,15 @@
                     <td>{{ date_format($task->created_at, 'd.m.Y') }}</td>
                     @auth()
                     <td>
-{{--                        <a--}}
-{{--                            class="text-red-600 hover:text-red-900"--}}
-{{--                            rel="nofollow"--}}
-{{--                            data-method="delete"--}}
-{{--                            data-confirm="{{ __('layout.table_delete_question') }}"--}}
-{{--                            href="{{ route('tasks.destroy', $task) }}"--}}
-{{--                        >--}}
-{{--                            {{ __('layout.table_delete') }}--}}
-{{--                        </a>--}}
+                        <a
+                            class="text-red-600 hover:text-red-900"
+                            rel="nofollow"
+                            data-method="delete"
+                            data-confirm="{{ __('layout.table_delete_question') }}"
+                            href="{{ route('tasks.destroy', $task) }}"
+                        >
+                            {{ __('layout.table_delete') }}
+                        </a>
 
                         <a class="text-white hover:text-gray-700"
                            href="{{ route("tasks.edit", $task) }}"
