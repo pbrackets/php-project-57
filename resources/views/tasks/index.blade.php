@@ -84,6 +84,7 @@
                     <td>{{ $users[$task->created_by_id] }}</td>
                     <td>{{ $users[$task->assigned_to_id] }}</td>
                     <td>{{ date_format($task->created_at, 'd.m.Y') }}</td>
+                    @auth()
                     <td>
 {{--                        <a--}}
 {{--                            class="text-red-600 hover:text-red-900"--}}
@@ -102,7 +103,7 @@
                         </a>
 
                     </td>
-
+                    @endauth
                 </tr>
             @endforeach
             </tbody>
