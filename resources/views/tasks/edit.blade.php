@@ -49,7 +49,7 @@
                     {{  html()->label(__('layout.labels'))->addClass(['text-white']) }}
                 </div>
                 <div class="mt-2">
-                    {{  html()->select('labels[]', $labels, $task->labels)->addClass(['form-control', 'rounded', 'border-gray-300', 'w-1/3', 'h-32'])->multiple('multiple')->placeholder('') }}
+                    {{  html()->select('labels[]', $labels, $task->labels)->addClass(['form-control', 'rounded', 'border-gray-300', 'w-1/3', 'h-32'])->multiple('multiple') }}
                 </div>
                 <div class="mt-4">
                     {{  html()->submit(__('layout.update_button'))->addClass(['bg-white', 'hover:bg-gray-700', 'text-black', 'font-bold', 'py-2', 'px-4', 'rounded']) }}
