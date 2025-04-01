@@ -39,4 +39,3 @@ return [
     'create_button_label' => 'Create label',
     'create_button_task' => 'Create task',
 ];
-

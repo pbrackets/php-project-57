@@ -96,4 +96,3 @@ class LabelTest extends TestCase
         $response->assertStatus(403);
     }
 }
-

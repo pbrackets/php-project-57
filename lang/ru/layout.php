@@ -39,4 +39,3 @@ return [
     'create_button_label' => 'Создать метку',
     'create_button_task' => 'Создать задачу',
 ];
-
