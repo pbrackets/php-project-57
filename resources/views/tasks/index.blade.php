@@ -86,7 +86,7 @@
                     <td>{{ date_format($task->created_at, 'd.m.Y') }}</td>
                     @auth()
                     <td>
-                        @can('delete', $task)
+                        @cannot('delete', $task)
                         <a
                             class="text-red-600 hover:text-red-900"
                             rel="nofollow"
@@ -96,13 +96,14 @@
                         >
                             {{ __('layout.table_delete') }}
                         </a>
-                        @endcan
-
+                        @endcannot
+                        @can('update', $task)
                         <a class="text-white hover:text-gray-700"
                            href="{{ route("tasks.edit", $task) }}"
                         >
                             {{ __('layout.table_edit') }}
                         </a>
+                            @endcan
 
                     </td>
                     @endauth
