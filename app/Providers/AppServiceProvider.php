@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Task;
+use App\Models\User;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,5 +25,8 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.env') === 'production') {
             resolve(\Illuminate\Routing\UrlGenerator::class)->forceScheme('https');
         }
+        Gate::define('delete', function (User $user, Task $task) {
+            return $user->id === $task->created_by_id;
+        });
     }
 }
