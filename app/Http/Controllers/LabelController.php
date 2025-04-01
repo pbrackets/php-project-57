@@ -21,6 +21,7 @@ class LabelController extends Controller
         if (Auth::guest()) {
             return abort(403);
         }
+
         return view('labels.create');
     }
 
@@ -30,12 +31,13 @@ class LabelController extends Controller
             return redirect()->route('labels.index');
         }
         $validated = $request->validated();
-        $label = new Label();
+        $label     = new Label();
 
         $label->fill($validated);
         $label->save();
 
         flash(__('controllers.label_create'))->success();
+
         return redirect()->route('labels.index');
     }
 
@@ -57,22 +59,22 @@ class LabelController extends Controller
         $label->save();
 
         flash(__('controllers.label_update'))->success();
+
         return redirect()->route('labels.index');
     }
 
     public function destroy(Label $label)
     {
-
         if ($label->tasks()->exists()) {
             flash(__('controllers.label_statuses_destroy_failed'))->error();
+
             return back();
         }
 
         $label->delete();
 
         flash(__('controllers.label_destroy'))->success();
+
         return redirect()->route('labels.index');
     }
 }
-
-

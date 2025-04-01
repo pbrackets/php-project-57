@@ -22,4 +22,3 @@ class Label extends Model
         return $this->hasMany('App\Models\Task', 'status_id');
     }
 }
-
