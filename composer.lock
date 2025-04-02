@@ -4859,6 +4859,9 @@
             },
             "type": "library",
             "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\HttpKernel\\": ""
+                },
                 "exclude-from-classmap": [
                     "/Tests/"
                 ]
