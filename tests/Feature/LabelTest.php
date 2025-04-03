@@ -17,7 +17,7 @@ class LabelTest extends TestCase
         parent::setUp();
         $this->user = User::factory()->create();
         $this->data = Label::factory()->make()->only(['name', 'description']);
-        $this->label = Label::factory()->create();
+        $this->label = Label::factory()->createOne();
     }
 
     public function testLabelsPage(): void

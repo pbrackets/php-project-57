@@ -13,21 +13,21 @@ class TaskTest extends TestCase
     private Task $task;
     private array $data;
 
-    // protected function setUp(): void
-    // {
-    //     parent::setUp();
-    //     $this->user = User::factory()->create();
-    //     TaskStatus::factory()->create();
-    //     $this->task = Task::factory()->create();
-    //     $this->data = $this->task->only(
-    //         [
-    //             'name',
-    //             'description',
-    //             'status_id',
-    //             'assigned_to_id',
-    //         ]
-    //     );
-    // }
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->user = User::factory()->create();
+        TaskStatus::factory()->create();
+        $this->task = Task::factory()->createOne();
+        $this->data = $this->task->only(
+            [
+                'name',
+                'description',
+                'status_id',
+                'assigned_to_id',
+            ]
+        );
+    }
 
     public function testTasksPage(): void
     {
