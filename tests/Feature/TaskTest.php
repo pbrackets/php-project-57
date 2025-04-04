@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Label;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
@@ -18,7 +19,6 @@ class TaskTest extends TestCase
         parent::setUp();
         $this->user = User::factory()->create();
         TaskStatus::factory()->create();
-        $this->task = Task::factory()->create();
         $this->data = $this->task->only(
             [
                 'name',
@@ -27,6 +27,9 @@ class TaskTest extends TestCase
                 'assigned_to_id',
             ]
         );
+        /** @var Task:: $task */
+        $task       = Task::factory()->createOne();
+        $this->task = $task;
     }
 
     public function testTasksPage(): void
