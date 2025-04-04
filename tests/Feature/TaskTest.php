@@ -18,7 +18,7 @@ class TaskTest extends TestCase
         parent::setUp();
         $this->user = User::factory()->create();
         TaskStatus::factory()->create();
-        $this->task = Task::factory()->createOne();
+        $this->task = Task::factory()->create();
         $this->data = $this->task->only(
             [
                 'name',
