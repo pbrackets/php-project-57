@@ -27,7 +27,7 @@ class TaskTest extends TestCase
                 'assigned_to_id',
             ]
         );
-        /** @var Task:: $task */
+        /** @var Task $task */
         $task       = Task::factory()->createOne();
         $this->task = $task;
     }
